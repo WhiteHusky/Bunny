@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="scripts/jQuery.js"></script>
+<script>
+function fixsize()
+	{
+	document.getElementById('textlog').style.height = $(window).height()-200+'px';
+	}
+</script>
+</head>
+<body>
+<audio id="pm" src="sounds/pm.wav" preload="auto"></audio>
+<input value="ws://chat.f-list.net:9722" id="server" type="text"  placeholder="Server" onkeydown="if (event.keyCode == 13) document.getElementById('connect').click();" readonly/><button id= "connect" type="submit" onclick="connecttoserver()">Connect</button><button id= "disconnect" type="disconnect" onclick="disconnect()">Disconnect</button>
+<div id="textlog" style="height:100px;width:95%;border:1px solid #ccc;overflow:scroll;font-family: Courier New, Courier, monospace;"></div><br/>
+<input style="width:80%" id="usertext" type="text"  placeholder="Type Here" onkeydown="if (event.keyCode == 13) document.getElementById('submit').click();" /><button style="width:15%" id= "submit" type="submit" onclick="sendmessage()">Send</button><br/>
+<input style="width:80%" id="Account" type="text"  placeholder="Account"/>
+<input style="width:80%" id="APIkey" type="text"  placeholder="Input API Key"/>
+<input style="width:80%" id="Character" type="text"  placeholder="Character Name"/>
+<script src="scripts/MainThread.js"></script>
+</body>
+<script>fixsize()
+window.onresize = function(event) {fixsize()}</script>
+</html>
